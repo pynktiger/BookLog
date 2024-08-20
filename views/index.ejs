@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="/styles.css">
+<%- include("partials/header.ejs") %> 
+
+<form action="/new-book" method="get">
+    <label for="newBook">Create new review:</label>
+    <input type="submit" id="newBook" value="Create new">
+</form>
+
+
+<h1>Books:</h1>
+<% books.forEach(book => { %>
+    <div>
+    <img src="<%= book.isbn %>" alt="<%= book.title %> Cover Image"/>
+    <h2><%= book.title %></h2>
+    <a href="/book/<%= book.id %>" id="book-<%= book.id %>">View Notes</a>
+    <p><%= book.rating %></p>
+    <p><%= book.summary %></p>
+    <form action="/delete_book" method="post">
+        <input type="hidden" name="bookId" value="<%= book.id %>"> <%# invisible input to send over book.id along with submission %>
+        <input type="submit" name="deleteButton" value="Delete Book">
+    </form>
+</div>
+<% }); %>
+
+
+<%- include("partials/footer.ejs") %> 

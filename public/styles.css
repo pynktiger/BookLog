@@ -1,0 +1,35 @@
+html {
+    background-color: blue;
+}
+body{
+    margin: 0 auto;
+    padding: 5px;
+    font-family: Georgia, serif;
+    font-size: 20px;
+    line-height: 30px;
+    background-color: #fff;
+    color: #000;
+}
+img{
+    float: left;
+    margin-right: 2em
+}
+
+div{
+    margin: 0 0 13em 0;
+}
+
+#contain{
+    display: flex;
+    flex-direction: column;
+    height: 260px;
+}
+
+.new-notes{
+    margin: 0;
+}
+
+#newNoteInput{
+    width: 50%;
+    height: 12rem;
+}

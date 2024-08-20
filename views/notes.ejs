@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="/styles.css">
+<a href="/">home</a>
+
+
+<div id="contain" class="new-notes">
+
+    <div id="startNote" class="new-notes">
+        <button id="showInput" onclick="createNote()">Create New Note</button>
+    </div>
+    
+    <form action="/book/:id" method="post" id="makingNote" style="display: none;" class="new-notes"> 
+        <div>
+            <input type="text" id="newNoteInput" name="newNote">
+            <input type="submit" value="Create">
+        </div>
+    </form>
+
+</div>
+
+
+
+<ul>
+    <% notes.forEach(note => { %>
+        <li> <%= note %></li>
+   <% }); %>
+</ul>
+
+<script>
+    function createNote() {
+        const makingNoteDiv = document.getElementById("makingNote");
+        console.log(makingNoteDiv.style.display);
+
+        if (makingNoteDiv.style.display === "none"){
+            makingNoteDiv.style.display = "block";
+        }else{
+            makingNoteDiv.style.display = "none";
+        };
+        }
+</script>
